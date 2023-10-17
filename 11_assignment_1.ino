@@ -69,6 +69,7 @@ void loop() {
     myservo.writeMicroseconds(_DUTY_MAX);
   }else
     myservo.writeMicroseconds((_DUTY_MAX-_DUTY_MIN)/(_TARGET_HIGH-_TARGET_LOW)*(dist_ema-_TARGET_LOW)+_DUTY_MIN);
+  //myservo.write(map(dist_ema,_TARGET_LOW,_TARGET_HIGH,_DUTY_MIN,_DUTY_MAX));
 
   if ((dist_raw == 0.0) || (dist_raw > _DIST_MAX)) {
     dist_raw = dist_prev;           // Cut higher than maximum
